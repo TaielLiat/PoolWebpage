@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Formulario de Empresa</title>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="https://1000marcas.net/wp-content/uploads/2019/12/Starbucks-logo.jpg" alt="Logo de la empresa">
+        <div id="formulario1">
+            <h1>Formulario de Inscripción</h1>
+            <form>
+                <label for="nombre">Nombre y Apellido </label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo Electrónico</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9]+" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit" id="continuarBtn">Continuar</button>
+            </form>
+        </div>
+        <div id="formulario2" class="hidden">
+            <h1>Seleccionar servicio</h1>
+            <form class="servicio">
+            <label class="container">
+                <input type="checkbox" name="servicios[]" value="pileta_libre">
+                <span class="checkmark"> </span>
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic3.depositphotos.com%2F1005383%2F229%2Fi%2F950%2Fdepositphotos_2291225-stock-photo-swimming-pool.jpg&f=1&nofb=1&ipt=ffc6bb145aced4886f73aa9cc12f0a22be41dcfae2b52aa0e4a351fc7d5e51f5&ipo=images" alt="Pileta">
+                <p >Pileta libre - Disponibilidad de 8:00hs a 19:00hs.</p>
+            </label>
+            <label class="container">
+                <input type="checkbox" name="servicios[]" value="aquagym" class="checkmark">
+                <span class="checkmark"> </span>
+                <div class="img-container">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fst3.depositphotos.com%2F1743476%2F12595%2Fi%2F950%2Fdepositphotos_125952052-stock-photo-aqua-gym-class.jpg&f=1&nofb=1&ipt=0bbdbd597ad3e41e27e420da4a511493fc419fb3ec1ed62b321de690e0216e9f&ipo=images" alt="Aquagym">
+                </div>
+                <p>Aquagym - Clases de ejercicios acuáticos para mantenerte en forma.</p>
+            </label>
+            <label class="container">
+                <input type="checkbox" name="servicios[]" value="maquinas" class="checkmark">
+                <span class="checkmark"> </span>
+                <img src="maquinas.png" alt="Máquinas">
+                <p>Máquinas - Acceso a una variedad de equipos de ejercicios.</p>
+            </label>
+            <label class="container">
+                <input type="checkbox" name="servicios[]" value="aerobicos" class="checkmark">
+                <span class="checkmark"> </span>
+                <img src="aerobicos.png" alt="Aeróbicos">
+                <p>Aeróbicos - Clases de ejercicios cardiovasculares para mejorar la resistencia.</p>
+            </label>
+            <!-- Agrega más servicios con imágenes y descripciones según tus necesidades -->
+
+                <button type="submit" id="continuarBtn">Continuar</button>
+                <button type="submit" id="volverBtn">Volver</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    const continuarBtn = document.getElementById("continuarBtn");
+    const volverBtn = document.getElementById("volverBtn");
+    const primerFormulario = document.getElementById("formulario1");
+    const segundoFormulario = document.getElementById("formulario2");
+
+    continuarBtn.addEventListener("click", () => {
+        primerFormulario.classList.add("hidden");
+        segundoFormulario.classList.remove("hidden");
+    });
+    volverBtn.addEventListener("click", () => {
+        primerFormulario.classList.remove("hidden");
+        segundoFormulario.classList.add("hidden");
+    });
+</script>
+</html>
